@@ -10,14 +10,12 @@ import (
 func New(e *gin.Engine) {
 	// 注册全局的中间件
 	e.Use(gin.Logger(), midderware.Recovery)
-
+	// webhook 地址
 	e.POST("/webhook", controllers.Webhook)
 
 	// 前台页面组，添加右侧标签的中间件
 	front := e.Group("/", midderware.Sites, midderware.Navigation, midderware.Tags)
 	{
-		// webhook 地址
-		e.POST("/webhook", controllers.Webhook)
 		// 出现错误的页面
 		e.GET("/errors", midderware.Errors)
 
