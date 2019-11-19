@@ -6,4 +6,4 @@
 
 ## 提示
 
-此项目forked [mdblog](https://github.com/broqiang/mdblog) 请移步查看。
+此项目 forked [mdblog](https://github.com/broqiang/mdblog) 请移步查看。

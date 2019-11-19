@@ -16,6 +16,8 @@ func New(e *gin.Engine) {
 	// 前台页面组，添加右侧标签的中间件
 	front := e.Group("/", midderware.Sites, midderware.Navigation, midderware.Tags)
 	{
+		// webhook 地址
+		e.POST("/webhook", controllers.Webhook)
 		// 出现错误的页面
 		e.GET("/errors", midderware.Errors)
 
